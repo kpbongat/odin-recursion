@@ -5,3 +5,15 @@ function fibs(n) {
   }
   return seq.slice(0, n);
 }
+
+function fibsRec(n) {
+  if (n === 1) {
+    return [0];
+  }
+  if (n === 2) {
+    return [0, 1];
+  } else {
+    const lastSeq = fibsRec(n - 1);
+    return [...lastSeq, lastSeq.at(-1) + lastSeq.at(-2)];
+  }
+}
